@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        label {
+            margin-top: 10px;
+        }
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            width: 300px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        h3 {
+            margin-top: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Form</h1>
+
+    <label for="mail">Email</label>
+    <input type="email" id="mail" placeholder="johndoe@gmail.com" required><br>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="**********" required><br>
+
+    <button onclick="submitForm()">Login</button>
+    <h3 id="text"></h3>
+
+    <script>
+        function submitForm() {
+            const email = document.getElementById("mail").value;
+            const pass = document.getElementById("password").value;
+            document.getElementById("text").innerText = `Email: ${email}, Password: ${pass}`;
+            console.log("Email: " + email + ", Password: " + pass);
+            document.getElementById("mail").value = "";
+            document.getElementById("password").value = "";
+        }
+    </script>
+</body>
+</html>
